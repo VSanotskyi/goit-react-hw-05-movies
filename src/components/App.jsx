@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import Layout from '../layout/Layout';
 import HomePage from '../pages/HomePage/HomePage';
 import MoviesPage from '../pages/MoviesPage/MoviesPage';
+import FilmDetail from './FilmDetail/FilmDetail';
 
 export default function App() {
   return (
@@ -15,10 +16,14 @@ export default function App() {
         <Route path="movies"
                element={<MoviesPage />}
         />
-        <Route path="*"
-               element={<HomePage />}
+        <Route path="/:movieID"
+               element={<FilmDetail />}
         />
+
       </Route>
+      <Route path="*"
+             element={<Layout />}
+      />
     </Routes>
   );
 }
