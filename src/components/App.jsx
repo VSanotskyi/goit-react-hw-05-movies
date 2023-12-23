@@ -16,14 +16,13 @@ export default function App() {
         <Route path="movies"
                element={<MoviesPage />}
         />
-        <Route path="/:movieID"
+        <Route path="movies/:movieID"
                element={<FilmDetail />}
         />
-
+        <Route path="*"
+               element={<HomePage />}
+        />
       </Route>
-      <Route path="*"
-             element={<Layout />}
-      />
     </Routes>
   );
 }

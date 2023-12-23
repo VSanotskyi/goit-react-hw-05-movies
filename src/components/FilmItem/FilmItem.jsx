@@ -5,7 +5,7 @@ export default function FilmItem({ movie }) {
 
   return (
     <li>
-      <Link to={movie.id.toString()}>
+      <Link to={`movies/${movie.id}`}>
         <h2>{title}</h2>
         <img src={`https://image.tmdb.org/t/p/w200/${poster_path}`}
              alt=""

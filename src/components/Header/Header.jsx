@@ -11,7 +11,7 @@ export default function Header() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="movies">
+            <NavLink to="/movies">
               Movies
             </NavLink>
           </li>
