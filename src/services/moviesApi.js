@@ -12,19 +12,36 @@ const params = {
 
 axios.defaults.baseURL = BASE_URL;
 
-const getTrendingMovies = async (page) => {
+const fetchTrendingMovies = async (page) => {
   const { data } = await axios(`trending/movie/day?page=${page}`, params);
   return data;
 };
 
-const getSearchMovies = async (search) => {
-  const { data } = await axios(`/search/movie?query=${search}`, params);
+const fetchSearchMovies = async (page, search) => {
+  const { data } = await axios(`/search/movie?query=${search}&page=${page}`,
+    params);
   return data;
 };
 
-const getDetailsMovies = async (id) => {
+const fetchDetailsMovies = async (id) => {
   const { data } = await axios(`movie/${id}`, params);
   return data;
 };
 
-export { getTrendingMovies, getSearchMovies, getDetailsMovies };
+const fetchMovieCredits = async (id) => {
+  const { data } = await axios(`movie/${id}/credits`, params);
+  return data;
+};
+
+const fetchMovieCast = async (id) => {
+  const { data } = await axios(`movie/${id}/reviews`, params);
+  return data;
+};
+
+export {
+  fetchTrendingMovies,
+  fetchDetailsMovies,
+  fetchSearchMovies,
+  fetchMovieCredits,
+  fetchMovieCast,
+};
