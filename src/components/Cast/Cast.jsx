@@ -13,7 +13,7 @@ export default function Cast() {
     };
 
     getCast();
-  }, []);
+  }, [movieID]);
 
   return (
     cast?.length > 0 && (
